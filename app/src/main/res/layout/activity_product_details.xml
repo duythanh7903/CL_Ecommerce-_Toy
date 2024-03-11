@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_16sdp"
+        tools:context=".presentation.ui.ProductDetailsActivity">
+
+        <ImageView
+            android:id="@+id/iconBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/icon_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iconAddCart"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/icon_add_cart"
+            app:layout_constraintBottom_toBottomOf="@id/iconBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iconBack"
+            app:tint="#009688" />
+
+        <TextView
+            android:id="@+id/textProductName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:ellipsize="marquee"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="@id/iconBack"
+            app:layout_constraintEnd_toStartOf="@id/iconAddCart"
+            app:layout_constraintStart_toEndOf="@id/iconBack"
+            app:layout_constraintTop_toTopOf="@id/iconBack"
+            tools:text="Product name" />
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageProduct"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconBack"
+            app:riv_corner_radius="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/text_red"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/imageProduct"
+            app:layout_constraintTop_toTopOf="@id/imageProduct"
+            tools:text="Price: 123 USD" />
+
+        <TextView
+            android:id="@+id/textQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/text_primary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/textPrice"
+            app:layout_constraintTop_toBottomOf="@id/textPrice"
+            tools:text="Quantity: 12 products" />
+
+        <ImageView
+            android:id="@+id/iconRating"
+            android:layout_width="@dimen/_13sdp"
+            android:layout_height="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:src="@drawable/icon_star"
+            app:layout_constraintStart_toStartOf="@id/textQuantity"
+            app:layout_constraintTop_toBottomOf="@id/textQuantity" />
+
+        <TextView
+            android:id="@+id/textRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:fontFamily="@font/bold"
+            android:textColor="#FFB02E"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iconRating"
+            app:layout_constraintStart_toEndOf="@id/iconRating"
+            app:layout_constraintTop_toTopOf="@id/iconRating"
+            tools:text="1.1" />
+
+        <TextView
+            android:id="@+id/textSold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="@font/thin"
+            android:textColor="@color/text_primary"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/iconRating"
+            app:layout_constraintTop_toBottomOf="@id/iconRating"
+            tools:ignore="SmallSp"
+            tools:text="Sold: 12 products" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvImageProduct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@id/imageProduct"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textPrice"
+            tools:itemCount="7"
+            tools:listitem="@layout/item_image_product" />
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/medium"
+            android:text="@string/lorem_ipsum"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageProduct" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

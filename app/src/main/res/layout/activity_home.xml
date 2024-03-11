@@ -12,5 +12,25 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.HomeActivity">
 
+        <androidx.fragment.app.FragmentContainerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+            android:id="@+id/layoutMainContainer"
+            app:defaultNavHost="true"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:navGraph="@navigation/nav_graph"/>
+        
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            app:itemIconTint="@drawable/bottom_nav_color"
+            app:itemTextColor="@drawable/bottom_nav_color"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            app:menu="@menu/bottom_nav_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/bottomNavigationView"
+            android:background="#C4D9EA"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
