@@ -56,6 +56,8 @@ class ProductDetailsActivity : BaseActivity<ActivityProductDetailsBinding>(R.lay
             textRating.text = "${if(product.sumVote == 0) 0 else (product.sumStar / product.sumVote)}"
             textSold.text = "Sold: ${product.purchases} ${if (product.purchases > 1) "products" else "product"}"
             textDescription.text = product.description
+            textCompanyName.text = "Made by ${product.companyName}"
+            textCategory.text = "Category: ${product.categoryName}"
         }
     }
 }

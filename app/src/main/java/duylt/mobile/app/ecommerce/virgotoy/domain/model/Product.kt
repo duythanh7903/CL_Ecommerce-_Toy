@@ -31,11 +31,11 @@ data class Product(
     var updatedAt: String = "",
     @SerializedName("description")
     var description: String = "",
-    @SerializedName("category_name")
-    var managerName: String = "",
     @SerializedName("manager_name")
-    var companyName: String = "",
+    var managerName: String = "",
     @SerializedName("company_name")
+    var companyName: String = "",
+    @SerializedName("category_name")
     var categoryName: String = "",
     @SerializedName("images")
     var images: MutableList<ImageProduct> = mutableListOf()
