@@ -16,23 +16,29 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.ui.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.ProductDetailsActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name=".presentation.ui.HomeActivity"
             android:exported="false"
             android:screenOrientation="nosensor"/>
         <activity
-            android:name=".presentation.ui.HomeActivity"
+            android:name=".presentation.ui.SplashActivity"
             android:exported="true"
-            android:screenOrientation="nosensor">
+            android:screenOrientation="nosensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".presentation.ui.SplashActivity"
-            android:exported="false"
-            android:screenOrientation="nosensor"/>
     </application>
 
 </manifest>

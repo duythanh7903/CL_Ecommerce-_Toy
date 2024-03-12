@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="duylt.mobile.app.ecommerce.virgotoy.presentation.viewmodel.SignUpViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.SignUpActivity"
+        android:padding="@dimen/_16sdp">
+
+        <ImageView
+            android:onClick="@{() -> viewModel.closeScreen()}"
+            android:id="@+id/iconBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/icon_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:fontFamily="@font/bold"
+            android:text="Register now"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_24ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconBack" />
+
+        <TextView
+            android:id="@+id/textTitleEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:fontFamily="@font/bold"
+            android:text="Email"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textTitle1" />
+
+        <EditText
+            android:id="@+id/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_white_border_gray_medium"
+            android:fontFamily="@font/regular"
+            android:hint="email_exam@gmail.com"
+            android:text="@={viewModel.email}"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/primary"
+            android:textColorHint="#959595"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/textTitleEmail" />
+
+        <TextView
+            android:id="@+id/textTitlePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/bold"
+            android:lines="1"
+            android:text="Password"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputPhoneNumber" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_white_border_gray_medium"
+            android:fontFamily="@font/regular"
+            android:hint="*****"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:maxLength="20"
+            android:text="@={viewModel.password}"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/primary"
+            android:textColorHint="#959595"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/textTitlePassword" />
+
+        <TextView
+            android:id="@+id/textTitlePhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/bold"
+            android:lines="1"
+            android:text="Phone number"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputEmail" />
+
+        <EditText
+            android:id="@+id/inputPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/bg_white_border_gray_medium"
+            android:fontFamily="@font/regular"
+            android:hint="+84"
+            android:inputType="phone"
+            android:lines="1"
+            android:text="@={viewModel.phoneNumber}"
+            android:maxLength="20"
+            android:paddingHorizontal="@dimen/_16sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/primary"
+            android:textColorHint="#959595"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/textTitlePhoneNumber" />
+
+        <TextView
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/bg_primary_border_medium"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Register"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/_14ssp"
+            android:onClick="@{() -> viewModel.handleSignUp()}"
+            app:layout_constraintTop_toBottomOf="@id/inputPassword" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

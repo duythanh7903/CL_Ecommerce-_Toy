@@ -16,8 +16,9 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_spl
     override fun initView() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(
-                Intent(this@SplashActivity, HomeActivity::class.java)
+                Intent(this@SplashActivity, LoginActivity::class.java)
             )
+            finish()
         }, 3000)
     }
 

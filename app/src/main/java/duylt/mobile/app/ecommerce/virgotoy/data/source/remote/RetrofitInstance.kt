@@ -31,5 +31,8 @@ class RetrofitInstance {
 
         val categoryService: CategoryService = getRetrofitBuilder()
             .create(CategoryService::class.java)
+
+        val accountService: AccountService = getRetrofitBuilder()
+            .create(AccountService::class.java)
     }
 }
